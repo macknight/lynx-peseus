@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rg_main_tabs"
+    android:layout_width="fill_parent"
+    android:layout_height="46dp"
+    android:layout_gravity="bottom"
+    android:gravity="center_vertical" 
+    android:background="@drawable/tab_bg"
+    android:orientation="horizontal" >
+    
+    <RadioButton android:id="@+id/rb_main_tab_oilcost"
+        style="@style/MainTabItemStyle"
+        android:drawableTop="@drawable/tab_oilcost"
+        android:text="@string/maintab_oilcost_tip"
+        android:checked="true" />
+    
+    <RadioButton android:id="@+id/rb_main_tab_mileage"
+        style="@style/MainTabItemStyle"
+        android:drawableTop="@drawable/tab_mileage"
+        android:text="@string/maintab_mileage_tip" />
+    
+    <RadioButton android:id="@+id/rb_main_tab_bill"
+        style="@style/MainTabItemStyle"
+        android:drawableTop="@drawable/tab_bill"
+        android:text="@string/maintab_bill_tip" />
+    
+    <RadioButton android:id="@+id/rb_main_tab_diagnose"
+        style="@style/MainTabItemStyle"
+        android:drawableTop="@drawable/tab_diagnose"
+        android:text="@string/maintab_diagnose_tip" />
+    
+    <RadioButton android:id="@+id/rb_main_tab_settings"
+        style="@style/MainTabItemStyle"
+        android:drawableTop="@drawable/tab_settings"
+        android:text="@string/maintab_settings_tip" />
+</RadioGroup>

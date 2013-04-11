@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="font_size_xlarge">18.0sp</dimen>
+    <dimen name="font_size_large">16.0sp</dimen>
+    <dimen name="font_size_default">14.0sp</dimen>
+    <dimen name="font_size_small">12.0sp</dimen>
+    <dimen name="font_size_xsmall">9.0sp</dimen>
+    <dimen name="settings_item_height">44dp</dimen>
+
+    <dimen name="def_circle_indicator_radius">3dp</dimen>
+    <dimen name="def_circle_indicator_stroke_width">1dp</dimen>
+</resources>
