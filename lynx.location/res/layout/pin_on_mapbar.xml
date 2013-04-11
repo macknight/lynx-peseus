@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <com.mapbar.android.maps.MapView android:id="@+id/mv_mapbar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+    
+	<RelativeLayout android:id="@+id/rl_mapbar_tips_bar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/tips_bar">
+	    
+	    <ImageView android:id="@+id/iv_mapbar_loc_state"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginLeft="20dp"
+	        android:contentDescription="@null"
+	        android:src="@drawable/gray_point"/>
+	    
+	    <TextView android:id="@+id/tv_mapbar_loc_info"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_centerInParent="true"
+		    android:gravity="center_horizontal"
+		    android:textColor="@color/Grey"
+		    android:textSize="14sp" />
+	    
+	    <ImageView android:id="@+id/iv_mapbar_refresh"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentRight="true"
+		    android:layout_centerVertical="true"
+		    android:layout_marginRight="15dp"
+		    android:contentDescription="@null"
+		    android:background="#0000"
+		    android:src="@drawable/refresh" />
+	    
+	</RelativeLayout>
+	
+	<LinearLayout android:id="@+id/ll_mapbar_tip_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/rl_mapbar_tips_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/round_corner_bg" />
+	
+</RelativeLayout>

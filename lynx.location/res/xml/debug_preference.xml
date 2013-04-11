@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="Debug Setting">
+        <CheckBoxPreference android:key="debug"
+            android:title="debug"
+            android:summaryOn="debug:on"
+            android:summaryOff="debug:off"
+            android:defaultValue="false" />
+        
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="Detail Setting">
+        <EditTextPreference android:title="debug host:"
+            android:key="debug_host">
+        </EditTextPreference>
+    </PreferenceCategory>
+</PreferenceScreen>
