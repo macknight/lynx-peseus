@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MApiReader</string>
+    <string name="action_settings">Settings</string>
+    <!-- api reader tips -->
+    <string name="api_account">账号</string>
+    <string name="api_biz">业务</string>
+    <string name="api_config">配置</string>
+    <string name="api_feedback">反馈</string>
+    <string name="api_version">版本</string>
+    <string name="api_http">网络</string>
+    <!-- pull to refresh listview tips -->
+    <string name="refresh_pull_down_tip">下拉刷新…</string>
+    <string name="refresh_release_tip">松开刷新…</string>
+    <string name="loading_tip">正在载入…</string>
+    <!-- 账号接口提示 -->
+    <string name="account_input_email_hint">邮箱</string>
+    <string name="account_input_name_hint">用户名</string>
+    <string name="account_input_pwd_hint">密码</string>
+    <string name="account_input_repwd_hint">重新输入密码</string>
+    <string name="name_login_tip">通过用户名登录</string>
+    <string name="email_login_tip">通过邮箱登录</string>
+    <string name="register_tip">注册</string>
+    <string name="uploadprofile_tip">上传头像</string>
+    <!-- http request reader tips -->
+    <string name="method_type_get">GET</string>
+    <string name="method_type_post">POST</string>
+    <string name="method_type_put">PUT</string>
+    <string name="method_type_delete">DELETE</string>
+    <string name="url_input_tip">URL:</string>
+    <string name="body_type_form_data">form-data</string>
+    <string name="body_type_urlencoded">x-www-form-urlencoded</string>
+    <string name="body_type_raw">raw</string>
+    <string name="http_url_input_hint">输入请求url</string>
+
+</resources>

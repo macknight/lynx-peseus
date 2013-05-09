@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="64dp"
+    android:clickable="false"
+    android:focusable="false" >
+
+    <TextView android:id="@+id/tv_refresh_tip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:paddingLeft="@dimen/standard_spacing"
+        android:shadowColor="@color/LightCyan"
+        android:shadowDy="1.0"
+        android:shadowRadius="0.5"
+        android:textColor="@color/DarkGrey"
+        android:textSize="@dimen/font_size_default"
+        android:textStyle="bold"
+        android:text="@string/refresh_pull_down_tip" />
+
+    <ProgressBar android:id="@+id/pb_refresh_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="65dp"
+        style="?android:attr/progressBarStyleSmall"
+        android:visibility="invisible" />
+
+    <ImageView android:id="@+id/iv_refresh_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="60dp"
+        android:contentDescription="@null"
+        android:scaleType="center"
+        android:src="@drawable/pull_arrow" />
+
+    <View android:id="@+id/v_refresh_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/standard_spacing"
+        android:visibility="visible" />
+
+</RelativeLayout>
