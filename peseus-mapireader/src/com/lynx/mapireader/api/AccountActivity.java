@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +45,7 @@ public class AccountActivity extends Activity {
 
 	private Button btnBack;
 	private ImageView ivUploadPreView;
-	private TextView tvUploadFileName;
+	private EditText etUploadFileName;
 	private Button btnLoginViaName, btnLoginViaEmail, btnRegister,
 			btnUploadProfile, btnChooseFile;
 
@@ -61,7 +62,7 @@ public class AccountActivity extends Activity {
 		setContentView(R.layout.activity_account);
 
 		ivUploadPreView = (ImageView) findViewById(R.id.iv_account_uploadprofile_preview);
-		tvUploadFileName = (TextView) findViewById(R.id.tv_account_uploadprofile_filename);
+		etUploadFileName = (EditText) findViewById(R.id.et_account_uploadprofile_filename);
 
 		btnBack = (Button) findViewById(R.id.btn_account_back);
 		btnBack.setOnClickListener(new OnClickListener() {
@@ -82,21 +83,6 @@ public class AccountActivity extends Activity {
 							Toast.LENGTH_SHORT).show();
 				} else {
 					login("name", "chris", "111");
-				}
-			}
-		});
-
-		btnLoginViaEmail = (Button) findViewById(R.id.btn_account_email_login);
-		btnLoginViaEmail.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				NetworkState networkState = NetworkUtil
-						.state(AccountActivity.this);
-				if (networkState == NetworkState.NETWORK_NONE) {
-					Toast.makeText(AccountActivity.this, "未连接网络",
-							Toast.LENGTH_SHORT).show();
-				} else {
-					login("email", "chrisliu@gmail.com", "1111");
 				}
 			}
 		});
@@ -247,7 +233,7 @@ public class AccountActivity extends Activity {
 				bmpProfile = BitmapFactory
 						.decodeStream(cr.openInputStream(uri));
 				ivUploadPreView.setImageBitmap(bmpProfile);
-				tvUploadFileName.setText(uri.getLastPathSegment());
+				etUploadFileName.setText(uri.getLastPathSegment());
 			} catch (FileNotFoundException e) {
 				Log.e("Exception", e.getMessage(), e);
 			}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MApiReader</string>
+    <string name="app_name">peseus api</string>
     <string name="action_settings">Settings</string>
     <!-- api reader tips -->
     <string name="api_account">账号</string>
@@ -23,6 +23,7 @@
     <string name="email_login_tip">通过邮箱登录</string>
     <string name="register_tip">注册</string>
     <string name="uploadprofile_tip">上传头像</string>
+    <string name="upload_file_tip">上传文件名</string>
     <!-- http request reader tips -->
     <string name="method_type_get">GET</string>
     <string name="method_type_post">POST</string>
