@@ -22,7 +22,6 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cop.mapireader.R;
@@ -32,6 +31,7 @@ import com.lynx.lib.dataservice.NetworkUtil.NetworkState;
 import com.lynx.lib.dataservice.core.HttpParam;
 import com.lynx.lib.dataservice.handler.HttpCallback;
 import com.lynx.mapireader.LCApplication;
+import com.lynx.mapireader.util.StaticParam;
 
 /**
  * 
@@ -50,11 +50,6 @@ public class AccountActivity extends Activity {
 			btnUploadProfile, btnChooseFile;
 
 	private static Bitmap bmpProfile;
-
-	private static final String LOGIN_URL = "http://58.210.101.202:59102/test/account/login";
-	// private static final String UPLOAD_PROFILE_URL =
-	// "http://58.210.101.202:59102/test/account/uploadprofile";
-	private static final String UPLOAD_PROFILE_URL = "http://localhost:8080/test/account/uploadprofile";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -147,31 +142,32 @@ public class AccountActivity extends Activity {
 		HttpParam params = new HttpParam();
 		params.put(key, val);
 		params.put("pwd", pwd);
-		httpService.post(LOGIN_URL, params, new HttpCallback<String>() {
-			@Override
-			public void onLoading(long count, long current) {
-				// 每1秒钟自动被回调一次
-				// tvConsole.setText(current + "/" + count);
-			}
+		httpService.post(StaticParam.URL_ACCOUNT_LOGIN, params,
+				new HttpCallback<String>() {
+					@Override
+					public void onLoading(long count, long current) {
+						// 每1秒钟自动被回调一次
+						// tvConsole.setText(current + "/" + count);
+					}
 
-			@Override
-			public void onSuccess(String t) {
-				Toast.makeText(AccountActivity.this, t, Toast.LENGTH_SHORT)
-						.show();
-			}
+					@Override
+					public void onSuccess(String t) {
+						Toast.makeText(AccountActivity.this, t,
+								Toast.LENGTH_SHORT).show();
+					}
 
-			@Override
-			public void onStart() {
-				// 开始http请求的时候回调
-			}
+					@Override
+					public void onStart() {
+						// 开始http请求的时候回调
+					}
 
-			@Override
-			public void onFailure(Throwable t, String strMsg) {
-				// 加载失败的时候回调
-				Toast.makeText(AccountActivity.this, "网络异常", Toast.LENGTH_SHORT)
-						.show();
-			}
-		});
+					@Override
+					public void onFailure(Throwable t, String strMsg) {
+						// 加载失败的时候回调
+						Toast.makeText(AccountActivity.this, "网络异常",
+								Toast.LENGTH_SHORT).show();
+					}
+				});
 	}
 
 	private void register(Map<String, Object> params) {
@@ -189,7 +185,7 @@ public class AccountActivity extends Activity {
 		HttpParam params = new HttpParam();
 		params.put("uid", uid + "");
 		params.put("profile", sbs);
-		httpService.post(UPLOAD_PROFILE_URL, params,
+		httpService.post(StaticParam.URL_ACCOUNT_UPLOAD, params,
 				new HttpCallback<String>() {
 					@Override
 					public void onLoading(long count, long current) {
