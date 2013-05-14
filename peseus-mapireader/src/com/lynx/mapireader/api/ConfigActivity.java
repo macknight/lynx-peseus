@@ -1,11 +1,6 @@
 package com.lynx.mapireader.api;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -70,5 +65,12 @@ public class ConfigActivity extends Activity {
 						// 加载失败的时候回调
 					}
 				});
+	}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.slide_right_enter,
+				R.anim.slide_right_exit);
 	}
 }

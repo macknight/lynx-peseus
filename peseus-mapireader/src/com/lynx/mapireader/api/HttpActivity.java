@@ -69,4 +69,11 @@ public class HttpActivity extends Activity implements OnCheckedChangeListener {
 			}
 		});
 	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.slide_right_enter,
+				R.anim.slide_right_exit);
+	}
 }

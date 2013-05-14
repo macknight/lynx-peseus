@@ -46,8 +46,8 @@ public class AccountActivity extends Activity {
 	private Button btnBack;
 	private ImageView ivUploadPreView;
 	private EditText etUploadFileName;
-	private Button btnLoginViaName, btnLoginViaEmail, btnRegister,
-			btnUploadProfile, btnChooseFile;
+	private Button btnLoginViaName, btnRegister, btnUploadProfile,
+			btnChooseFile;
 
 	private static Bitmap bmpProfile;
 
@@ -235,5 +235,12 @@ public class AccountActivity extends Activity {
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.slide_right_enter,
+				R.anim.slide_right_exit);
 	}
 }

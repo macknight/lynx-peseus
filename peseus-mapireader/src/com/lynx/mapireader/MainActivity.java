@@ -42,6 +42,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		ptrlvMain = (PullToRefreshListView) findViewById(R.id.ptrlv_main);
 
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.item_float);
@@ -58,6 +59,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		ptrlvMain.setOnUpdateTask(null);
 		ptrlvMain.setLayoutAnimation(lac);
 		ptrlvMain.setOnItemClickListener(this);
+
 	}
 
 	@Override
@@ -139,6 +141,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			break;
 		}
 		startActivity(intent);
+		overridePendingTransition(R.anim.slide_left_enter,
+				R.anim.slide_right_exit);
 	}
-
 }

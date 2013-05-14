@@ -29,4 +29,11 @@ public class FeedbackActivity extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		overridePendingTransition(R.anim.slide_right_enter,
+				R.anim.slide_right_exit);
+	}
 }
