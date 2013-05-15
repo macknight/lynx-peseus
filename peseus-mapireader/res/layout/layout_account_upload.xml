@@ -1,59 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/iv_account_uploadprofile_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pic_bg" />
+
+    <EditText
+        android:id="@+id/et_account_uploadprofile_filename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:id="@+id/iv_account_uploadprofile_preview"
-            android:layout_width="112dp"
-            android:layout_height="90dp"
-            android:layout_marginLeft="25dp"
-            android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@drawable/pic_bg" />
-
-        <EditText
-            android:id="@+id/et_account_uploadprofile_filename"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_toRightOf="@+id/iv_account_uploadprofile_preview"
-            android:background="@drawable/textfield_selector"
-            android:hint="@string/upload_file_tip"
-            android:inputType="none"
-            android:textColor="@color/Grey"
-            android:textIsSelectable="false"
-            android:textSize="@dimen/font_size_default" />
-
-        <Button
-            android:id="@+id/btn_account_choose_file"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/et_account_uploadprofile_filename"
-            android:layout_marginBottom="15dp"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/btn_more" />
-    </RelativeLayout>
+        android:layout_margin="5dp"
+        android:background="@drawable/textfield_selector"
+        android:hint="@string/upload_file_hint"
+        android:inputType="none"
+        android:textColor="@color/Grey"
+        android:textIsSelectable="false"
+        android:textSize="@dimen/font_size_default" />
 
     <Button
         android:id="@+id/btn_account_uploadprofile"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/custom_btn_selector"
-        android:text="@string/uploadprofile_tip" />
+        android:text="@string/btn_uploadprofile_tip" />
 
 </LinearLayout>

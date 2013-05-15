@@ -8,6 +8,7 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.animation.Animation;
@@ -20,10 +21,8 @@ import android.widget.SimpleAdapter;
 import com.cop.mapireader.R;
 import com.lynx.mapireader.api.AccountActivity;
 import com.lynx.mapireader.api.BizActivity;
-import com.lynx.mapireader.api.ConfigActivity;
-import com.lynx.mapireader.api.FeedbackActivity;
 import com.lynx.mapireader.api.HttpActivity;
-import com.lynx.mapireader.api.VersionActivity;
+import com.lynx.mapireader.api.OtherActivity;
 import com.lynx.widget.pulltorefreshlistview.PullToRefreshListView;
 
 /**
@@ -60,6 +59,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		ptrlvMain.setLayoutAnimation(lac);
 		ptrlvMain.setOnItemClickListener(this);
 
+		LCApplication application = (LCApplication) getApplication();
+		Log.d("user-agent", application.userAgent());
 	}
 
 	@Override
@@ -87,22 +88,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
 		map = new HashMap<String, Object>();
 		map.put("icon", R.drawable.mapi_items_config);
-		map.put("title", "配置");
-		map.put("desc", "app配置接口,config");
-		map.put("status", R.drawable.star_gray);
-		data.add(map);
-
-		map = new HashMap<String, Object>();
-		map.put("icon", R.drawable.mapi_items_feedback);
-		map.put("title", "反馈");
-		map.put("desc", "用户意见反馈,feedback");
-		map.put("status", R.drawable.star_gray);
-		data.add(map);
-
-		map = new HashMap<String, Object>();
-		map.put("icon", R.drawable.mapi_items_version);
-		map.put("title", "版本更新");
-		map.put("desc", "检查app是否有版本更新");
+		map.put("title", "其他");
+		map.put("desc", "config,用户意见反馈,版本更新等");
 		map.put("status", R.drawable.star_gray);
 		data.add(map);
 
@@ -127,21 +114,15 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		case 2: // biz
 			intent.setClass(this, BizActivity.class);
 			break;
-		case 3: // config
-			intent.setClass(this, ConfigActivity.class);
+		case 3: // other
+			intent.setClass(this, OtherActivity.class);
 			break;
-		case 4: // feedback
-			intent.setClass(this, FeedbackActivity.class);
-			break;
-		case 5: // version
-			intent.setClass(this, VersionActivity.class);
-			break;
-		default:
+		default: // http
 			intent.setClass(this, HttpActivity.class);
 			break;
 		}
 		startActivity(intent);
 		overridePendingTransition(R.anim.slide_left_enter,
-				R.anim.slide_right_exit);
+				R.anim.slide_left_exit);
 	}
 }

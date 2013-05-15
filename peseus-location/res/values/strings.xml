@@ -1,0 +1,66 @@
+<resources>
+
+    <string name="app_name">location toolkit</string>
+    
+    <string name="menu_debug_tip">debug</string>
+    <string name="menu_settings_tip">setting</string>
+    
+    <string name="tv_title_bar_debug_tip">调试设置</string>
+    <string name="tv_title_bar_demo_tip">定位工具</string>
+    <string name="tv_title_bar_info_tip">定位详情</string>
+    <string name="tv_title_bar_network_tip">网络请求测试</string>
+    
+    <string name="tv_location_pin_on_mapbar_tip">locate on mapbar</string>
+    <string name="tv_location_pin_on_mapbar_detail">定位并标注在mapbar地图上</string>
+    
+    <string name="tv_network_req_tip">Network Demo</string>
+    <string name="tv_network_req_detail">android network request test</string>
+    
+    <string name="location_info_tip">定位信息详情</string>
+    <string name="tv_cell_info_tip">基站信息</string>
+    <string name="tv_cell_type_tip">Type</string>
+    <string name="tv_cell_mcc_tip">MCC</string>
+    <string name="tv_cell_mnc_tip">MNC</string>
+    <string name="tv_cell_cid_tip">CID</string>
+    <string name="tv_cell_lac_tip">LAC</string>
+    <string name="tv_cell_asu_tip">ASU</string>
+    <string name="tv_wifi_info_tip">wifi信息</string>
+    <string name="tv_wifi_ssid_tip">SSID</string>
+    <string name="tv_wifi_mac_tip">MAC</string>
+    <string name="tv_wifi_dbm_tip">dBm</string>
+    <string name="tv_coord_info_tip">定位经纬度</string>
+    <string name="tv_coord_source_tip">Source</string>
+    <string name="tv_coord_lat_tip">Lat</string>
+    <string name="tv_coord_lng_tip">Lng</string>
+    <string name="tv_coord_acc_tip">Acc</string>
+    <string name="tv_coord_elapse_tip">Elapse</string>
+    
+    <string name="coord_type_gcell_tip">GCell</string>
+    <string name="coord_type_gwifi_tip">GWifi</string>
+    <string name="coord_type_bcell_tip">BCell</string>
+    <string name="coord_type_bwifi_tip">BWifi</string>
+    <string name="coord_type_acell_tip">ACell</string>
+    <string name="coord_type_awifi_tip">AWifi</string>
+    <string name="coord_type_system_tip">Sys</string>
+    <string name="coord_type_gps_tip">GPS</string>
+
+    <string name="tv_sys_info_tip">系统信息</string>
+    
+    <!-- debug panel tip -->
+    <string name="tv_debug_panel_1_tip">定位信息</string>
+    <string name="tv_debug_lst_coord_tip">上次定位经纬度:</string>
+    <string name="tv_debug_lst_addr_tip">上次定位地址:</string>
+    <string name="tv_debug_cur_locate_impl_tip">当前代码版本:</string>
+    <string name="tv_debug_panel_2_tip">定位设置</string>
+    <string name="tv_debug_isdebug_tip">定位控制面板:</string>
+    <string name="tv_debug_fake_location_tip">伪造经纬度:</string>
+    <string name="tv_debug_location_url_tip">定位服务接口:</string>
+    <string name="bt_debug_location_fake_submit_tip">提交</string>
+    <string name="bt_debug_location_fake_cancel_tip">取消</string>
+    
+    <string name="about_description">Just for fun, enjoy it, enjoy Life</string>
+    <string name="about_copyright_1">Open Source</string>
+    <string name="about_copyright_2">Copyright © 2011~2012 Lynx Studio.</string>
+    <string name="about_copyright_3">All Rights Reserved.</string>
+
+</resources>

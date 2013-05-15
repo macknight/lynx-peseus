@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/api_config"
+            android:text="@string/api_other"
             android:textColor="@color/Grey"
             android:textSize="@dimen/font_size_xlarge" />
     </RelativeLayout>

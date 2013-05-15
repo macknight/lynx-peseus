@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:name="com.lynx.mapireader.LCApplication"
@@ -30,12 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.lynx.mapireader.api.HttpActivity" />
         <activity android:name="com.lynx.mapireader.api.AccountActivity" />
         <activity android:name="com.lynx.mapireader.api.BizActivity" />
-        <activity android:name="com.lynx.mapireader.api.ConfigActivity" />
-        <activity android:name="com.lynx.mapireader.api.FeedbackActivity" />
-        <activity android:name="com.lynx.mapireader.api.VersionActivity" />
+        <activity android:name="com.lynx.mapireader.api.OtherActivity" />
+        <activity android:name="com.lynx.mapireader.api.HttpActivity" />
     </application>
 
 </manifest>

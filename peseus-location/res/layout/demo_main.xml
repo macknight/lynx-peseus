@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+    <TextView android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="@color/Grey"
+        android:textSize="@dimen/font_size_large"
+        android:text="@string/tv_title_bar_demo_tip" 
+        android:background="@drawable/tool_bar"/>
+    
+	<ScrollView 
+        android:layout_width="match_parent"
+    	android:layout_height="0dp"
+    	android:layout_weight="1"
+    	android:orientation="vertical" >
+    	
+	   	<LinearLayout
+	        android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
+		    
+		    <LinearLayout
+		        android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:layout_margin="5dp"
+			    android:gravity="center_horizontal"
+			    android:orientation="horizontal" >
+			    
+			   	<ImageButton android:id="@+id/ib_location_pin_on_mapbar"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="40dp"
+		            android:layout_gravity="center_vertical"
+		            android:background="@drawable/btn_location_def"
+		            android:contentDescription="@null" />
+			    
+			   	<LinearLayout 
+			   	    android:layout_width="0dp"
+			   	    android:layout_height="wrap_content"
+			   	    android:layout_weight="0.5"
+			   	    android:layout_gravity="center_vertical"
+			   	    android:layout_marginLeft="10dp"
+			   	    android:orientation="vertical">
+			   	    
+			   	    <TextView android:id="@+id/tv_location_pin_on_mapbar"
+				        android:layout_width="wrap_content" 
+						android:layout_height="wrap_content"
+						android:textSize="@dimen/font_size_large"
+						android:textColor="@color/Grey"
+						android:text="@string/tv_location_pin_on_mapbar_tip" />
+			   	    
+			   	    <TextView 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:textSize="@dimen/font_size_small"
+				        android:textColor="@color/Red"
+				        android:text="@string/tv_location_pin_on_mapbar_detail" />
+			   	</LinearLayout>
+		    </LinearLayout>
+		    
+		    <LinearLayout
+		        android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:layout_margin="5dp"
+			    android:gravity="center_horizontal"
+			    android:orientation="horizontal" >
+			    
+			   	<ImageButton android:id="@+id/ib_network_demo"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="40dp"
+		            android:layout_gravity="center_vertical"
+		            android:background="@drawable/btn_network_def"
+		            android:contentDescription="@null" />
+			    
+			   	<LinearLayout 
+			   	    android:layout_width="0dp"
+			   	    android:layout_height="wrap_content"
+			   	    android:layout_weight="0.5"
+			   	    android:layout_gravity="center_vertical"
+			   	    android:layout_marginLeft="10dp"
+			   	    android:orientation="vertical">
+			   	    
+			   	    <TextView android:id="@+id/tv_network_demo"
+				        android:layout_width="wrap_content" 
+						android:layout_height="wrap_content"
+						android:textSize="@dimen/font_size_large"
+						android:textColor="@color/Grey"
+						android:text="@string/tv_network_req_tip" />
+			   	    
+			   	    <TextView 
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:textSize="@dimen/font_size_small"
+				        android:textColor="@color/Red"
+				        android:text="@string/tv_network_req_detail" />
+			   	</LinearLayout>
+		    </LinearLayout>
+
+	    </LinearLayout>
+	</ScrollView> 
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_horizontal"
+	    android:textColor="@color/DarkSeaGreen"
+	    android:text="@string/about_copyright_2"/>
+</LinearLayout>

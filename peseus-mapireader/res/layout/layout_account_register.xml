@@ -1,61 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/et_account_register_obd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical" >
+        android:layout_margin="5dp"
+        android:background="@drawable/textfield_selector"
+        android:hint="@string/account_input_obd_hint"
+        android:inputType="textEmailAddress" />
 
-        <EditText
-            android:id="@+id/et_account_register_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/textfield_selector"
-            android:hint="@string/account_input_email_hint"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/et_account_register_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/textfield_selector"
-            android:hint="@string/account_input_name_hint"
-            android:inputType="textEmailAddress" />
-
-        <EditText
-            android:id="@+id/et_account_register_pwd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/textfield_selector"
-            android:hint="@string/account_input_pwd_hint"
-            android:inputType="textVisiblePassword" />
-
-        <EditText
-            android:id="@+id/et_account_register_repwd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@drawable/textfield_selector"
-            android:hint="@string/account_input_repwd_hint"
-            android:inputType="textVisiblePassword" />
-    </LinearLayout>
+    <EditText
+        android:id="@+id/et_account_register_sid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/textfield_selector"
+        android:hint="@string/account_input_sid_hint"
+        android:inputType="textEmailAddress" />
 
     <Button
         android:id="@+id/btn_account_register"
         android:layout_width="match_parent"
         android:layout_height="42dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/custom_btn_selector"
-        android:text="@string/register_tip" />
+        android:text="@string/btn_register_tip" />
 
 </LinearLayout>

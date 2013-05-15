@@ -1,0 +1,37 @@
+<resources>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <dimen name="user_image_size">48.0dp</dimen>
+    <dimen name="mini_user_image_size">32.0dp</dimen>
+    <dimen name="list_row_padding">10.0dp</dimen>
+    <dimen name="standard_spacing">5.0dp</dimen>
+    <dimen name="button_padding">8.0dp</dimen>
+    <dimen name="font_size_xlarge">18.0sp</dimen>
+    <dimen name="font_size_large">16.0sp</dimen>
+    <dimen name="font_size_default">14.0sp</dimen>
+    <dimen name="font_size_small">12.0sp</dimen>
+    <dimen name="font_size_xsmall">9.0sp</dimen>
+    <dimen name="text_single_line_height">18.0sp</dimen>
+    <dimen name="list_preferred_height">44.0dp</dimen>
+    <dimen name="divider_thickness">1.0dp</dimen>
+    <dimen name="inline_map_height">100.0dp</dimen>
+    <dimen name="map_height">150.0dp</dimen>
+    <dimen name="photo_attachment_size">72.0dp</dimen>
+    <dimen name="reply_to_height">28.0dp</dimen>
+    <dimen name="toolbar_button_width">160.0dp</dimen>
+    <dimen name="widget_header_height">44.0dp</dimen>
+    <dimen name="badge_spacing">3.0dp</dimen>
+    <dimen name="icon_spacing">4.0dp</dimen>
+    <dimen name="image_margin_top">2.0dp</dimen>
+    <dimen name="image_margin_right">6.0dp</dimen>
+    <dimen name="card_inset">10.0dp</dimen>
+    <dimen name="chevron_padding">5.0dp</dimen>
+    <dimen name="onebox_news_image">60.0dp</dimen>
+    <dimen name="bounceTravelDistance">5.0dp</dimen>
+    <dimen name="tap_to_refresh_height">64.0dp</dimen>
+    
+    <dimen name="settings_item_height">44dp</dimen>
+</resources>

@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import com.cop.mapireader.R;
 import com.lynx.lib.dataservice.HttpService;
@@ -18,9 +16,9 @@ import com.lynx.lib.dataservice.impl.DefaultHttpServiceImpl;
  * @author chris.liu
  * 
  */
-public class HttpActivity extends Activity implements OnCheckedChangeListener {
-	private Button btnBack;
-	private RadioGroup rgHttpType;
+public class HttpActivity extends Activity {
+
+	private Button btnBack = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +32,6 @@ public class HttpActivity extends Activity implements OnCheckedChangeListener {
 				HttpActivity.this.onBackPressed();
 			}
 		});
-
-		rgHttpType = (RadioGroup) findViewById(R.id.rg_http_type);
-		rgHttpType.setOnCheckedChangeListener(this);
-	}
-
-	@Override
-	public void onCheckedChanged(RadioGroup group, int checkedId) {
-
 	}
 
 	private void httpRequestTest() {
@@ -69,7 +59,7 @@ public class HttpActivity extends Activity implements OnCheckedChangeListener {
 			}
 		});
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
