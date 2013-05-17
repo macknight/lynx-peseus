@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="LightCyan">#E0FFFF</color>
     <color name="DeepSkyBlue">#009ACD</color>
     <color name="LimeGreen">#32CD32</color>
@@ -18,4 +19,5 @@
     <color name="Red">#EE0000</color>
     <color name="Thistle">#8B7B8B</color>
     <color name="DarkGrey">#A9A9A9</color>
+
 </resources>

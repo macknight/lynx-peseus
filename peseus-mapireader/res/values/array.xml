@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="entry_list_preference">
+        <item>综合部</item>
+        <item>行政部</item>
+        <item>外贸部</item>
+    </string-array>
+    <string-array name="entryvalues_list_preference">
+        <item>001</item>
+        <item>002</item>
+        <item>003</item>
+    </string-array>
+
+</resources>

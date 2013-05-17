@@ -65,11 +65,14 @@ public class OtherActivity extends Activity {
 
 			}
 		});
+
+		
 	}
 
 	private void getConfig() {
 		HttpService httpService = LCApplication.httpservice();
 		HttpParam params = new HttpParam();
+		params.put("token", LCApplication.token());
 		params.put("ua", LCApplication.userAgent());
 		httpService.get(URLs.URL_OTHER_CONFIG, new HttpCallback<String>() {
 			@Override

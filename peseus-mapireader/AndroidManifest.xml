@@ -31,6 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="com.lynx.mapireader.SettingsActivity" />
         <activity android:name="com.lynx.mapireader.api.AccountActivity" />
         <activity android:name="com.lynx.mapireader.api.BizActivity" />
         <activity android:name="com.lynx.mapireader.api.OtherActivity" />

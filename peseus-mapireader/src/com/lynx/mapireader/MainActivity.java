@@ -8,8 +8,8 @@ import java.util.Map;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,6 +23,7 @@ import com.lynx.mapireader.api.AccountActivity;
 import com.lynx.mapireader.api.BizActivity;
 import com.lynx.mapireader.api.HttpActivity;
 import com.lynx.mapireader.api.OtherActivity;
+import com.lynx.mapireader.util.Rotate3D;
 import com.lynx.widget.pulltorefreshlistview.PullToRefreshListView;
 
 /**
@@ -45,7 +46,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		ptrlvMain = (PullToRefreshListView) findViewById(R.id.ptrlv_main);
 
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.item_float);
-		lac = new LayoutAnimationController(anim);
+		Rotate3D flipAnim = new Rotate3D(-90, 0,
+				LCApplication.screenWidth() / 2,
+				LCApplication.screenHeight() / 2, Rotate3D.VERTICAL);
+		lac = new LayoutAnimationController(flipAnim);
 		lac.setOrder(Animation.ZORDER_BOTTOM);
 
 		SimpleAdapter adapter = new SimpleAdapter(this, getData(),
@@ -58,9 +62,6 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		ptrlvMain.setOnUpdateTask(null);
 		ptrlvMain.setLayoutAnimation(lac);
 		ptrlvMain.setOnItemClickListener(this);
-
-		LCApplication application = (LCApplication) getApplication();
-		Log.d("user-agent", application.userAgent());
 	}
 
 	@Override
@@ -101,6 +102,19 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		data.add(map);
 
 		return data;
+	}
+
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.action_settings:
+			Intent intent = new Intent();
+			intent.setClass(this, SettingsActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.push_up_in, R.anim.hold);
+			break;
+		}
+		return super.onMenuItemSelected(featureId, item);
 	}
 
 	@Override

@@ -2,7 +2,6 @@ package com.lynx.mapireader.api;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -14,6 +13,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.cop.mapireader.R;
+import com.lynx.mapireader.LCApplication;
 import com.lynx.mapireader.util.Rotate3D;
 
 /**
@@ -24,10 +24,10 @@ import com.lynx.mapireader.util.Rotate3D;
 public class AccountActivity extends Activity {
 	private GestureDetector gd;
 
-	private Rotate3D leftInAnim;
-	private Rotate3D leftOutAnim;
-	private Rotate3D rightInAnim;
-	private Rotate3D rightOutAnim;
+	private Rotate3D upInAnim;
+	private Rotate3D upOutAnim;
+	private Rotate3D downInAnim;
+	private Rotate3D downOutAnim;
 
 	private LayoutInflater inflater;
 	private LinearLayout llContainer;
@@ -58,21 +58,21 @@ public class AccountActivity extends Activity {
 					float velocityX, float velocityY) {
 				Log.d("Tag", velocityX + "");
 				if (velocityX < 20 && curPage < VIEWS.length - 1) {
-					viewCur.startAnimation(leftOutAnim);
+					viewCur.startAnimation(upOutAnim);
 					llContainer.removeAllViews();
 					curPage++;
 					viewNext = inflater.inflate(VIEWS[curPage], null);
 					llContainer.addView(viewNext);
 					viewCur = viewNext;
-					viewCur.startAnimation(rightInAnim);
+					viewCur.startAnimation(downInAnim);
 				} else if (velocityX > -20 && curPage > 0) {
-					viewCur.startAnimation(rightOutAnim);
+					viewCur.startAnimation(downOutAnim);
 					llContainer.removeAllViews();
 					curPage--;
 					viewNext = inflater.inflate(VIEWS[curPage], null);
 					llContainer.addView(viewNext);
 					viewCur = viewNext;
-					viewCur.startAnimation(leftInAnim);
+					viewCur.startAnimation(upInAnim);
 				}
 				return super.onFling(e1, e2, velocityX, velocityY);
 			}
@@ -100,23 +100,21 @@ public class AccountActivity extends Activity {
 	}
 
 	public void initAnim() {
-		DisplayMetrics dm = new DisplayMetrics();
-		dm = getResources().getDisplayMetrics();
-		int mCenterX = dm.widthPixels / 2;
-		int mCenterY = dm.heightPixels / 2;
+		int mCenterX = LCApplication.screenWidth() / 2;
+		int mCenterY = LCApplication.screenHeight() / 2;
 
 		int duration = 500;
-		leftInAnim = new Rotate3D(-90, 0, mCenterX, mCenterY);
-		leftInAnim.setFillAfter(true);
-		leftInAnim.setDuration(duration);
-		leftOutAnim = new Rotate3D(0, -90, mCenterX, mCenterY);
-		leftOutAnim.setFillAfter(true);
-		leftOutAnim.setDuration(duration);
-		rightInAnim = new Rotate3D(90, 0, mCenterX, mCenterY);
-		rightInAnim.setFillAfter(true);
-		rightInAnim.setDuration(duration);
-		rightOutAnim = new Rotate3D(0, 90, mCenterX, mCenterY);
-		rightOutAnim.setFillAfter(true);
-		rightOutAnim.setDuration(duration);
+		upInAnim = new Rotate3D(90, 0, mCenterX, mCenterY, Rotate3D.VERTICAL);
+		upInAnim.setFillAfter(true);
+		upInAnim.setDuration(duration);
+		upOutAnim = new Rotate3D(0, 90, mCenterX, mCenterY, Rotate3D.VERTICAL);
+		upOutAnim.setFillAfter(true);
+		upOutAnim.setDuration(duration);
+		downInAnim = new Rotate3D(-90, 0, mCenterX, mCenterY, Rotate3D.VERTICAL);
+		downInAnim.setFillAfter(true);
+		downInAnim.setDuration(duration);
+		downOutAnim = new Rotate3D(0, -90, mCenterX, mCenterY, Rotate3D.VERTICAL);
+		downOutAnim.setFillAfter(true);
+		downOutAnim.setDuration(duration);
 	}
 }

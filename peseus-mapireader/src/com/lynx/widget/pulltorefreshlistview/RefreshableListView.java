@@ -12,7 +12,7 @@ import android.widget.ListView;
 /**
  * 
  * @author chris.liu
- *
+ * 
  */
 public class RefreshableListView extends ListView {
 
