@@ -22,7 +22,7 @@ public class HttpActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_http);
 
-		btnBack = (Button) findViewById(R.id.btn_http_back);
+		btnBack = (Button) findViewById(R.id.btn_back);
 		btnBack.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

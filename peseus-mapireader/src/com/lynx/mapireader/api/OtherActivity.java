@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 import com.cop.mapireader.R;
 import com.lynx.lib.dataservice.HttpService;
-import com.lynx.lib.dataservice.NetworkUtil;
-import com.lynx.lib.dataservice.NetworkUtil.NetworkState;
+import com.lynx.lib.dataservice.NetworkManager;
+import com.lynx.lib.dataservice.NetworkManager.NetworkState;
 import com.lynx.lib.dataservice.core.HttpParam;
 import com.lynx.lib.dataservice.handler.HttpCallback;
 import com.lynx.mapireader.LCApplication;
@@ -23,6 +23,8 @@ import com.lynx.mapireader.util.URLs;
  * 
  */
 public class OtherActivity extends Activity {
+
+	private NetworkManager networkManager;
 	private TextView tvResult = null;
 
 	@Override
@@ -30,10 +32,12 @@ public class OtherActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_other);
 
+		networkManager = new NetworkManager(this);
+
 		tvResult = (TextView) findViewById(R.id.tv_other_result);
 		tvResult.setMovementMethod(ScrollingMovementMethod.getInstance());
 
-		Button btn = (Button) findViewById(R.id.btn_other_back);
+		Button btn = (Button) findViewById(R.id.btn_back);
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -45,7 +49,7 @@ public class OtherActivity extends Activity {
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (NetworkUtil.state(OtherActivity.this) == NetworkState.NETWORK_NONE) {
+				if (networkManager.state() == NetworkState.NETWORK_NONE) {
 					tvResult.setText("未连接网络");
 				} else {
 					getConfig();
@@ -57,7 +61,7 @@ public class OtherActivity extends Activity {
 		btn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (NetworkUtil.state(OtherActivity.this) == NetworkState.NETWORK_NONE) {
+				if (networkManager.state() == NetworkState.NETWORK_NONE) {
 					tvResult.setText("未连接网络");
 				} else {
 					feedback("加油，希望越来越好");
@@ -66,7 +70,6 @@ public class OtherActivity extends Activity {
 			}
 		});
 
-		
 	}
 
 	private void getConfig() {

@@ -11,7 +11,7 @@
         android:background="@drawable/nav_bar_bg" >
 
         <Button
-            android:id="@+id/btn_other_back"
+            android:id="@+id/btn_back"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentLeft="true"

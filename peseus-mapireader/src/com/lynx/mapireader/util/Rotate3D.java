@@ -99,9 +99,9 @@ public class Rotate3D extends Animation {
 			mCamera.restore();
 		} else {
 			mCamera.save();
-			mCamera.translate(0, centerY, centerX); // 位移x
+			mCamera.translate(0, -centerY, 0); // 位移y
+			mCamera.translate(0, centerY, 0);
 			mCamera.rotateX(degrees);
-			mCamera.translate(0, -centerY, -centerX);
 			mCamera.getMatrix(matrix);
 			mCamera.restore();
 		}

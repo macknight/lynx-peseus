@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -24,16 +23,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/api_dbcache"
+            android:text="@string/api_poi"
             android:textColor="@color/Grey"
             android:textSize="@dimen/font_size_xlarge" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/ll_settings_container"
+    <com.lynx.widget.pulltorefreshlistview.PullToRefreshListView
+        android:id="@+id/ptrlv_poi_geo_area"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
-    </LinearLayout>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/divider_h_gray"
+        android:listSelector="@drawable/item_def_selector"
+        android:scrollbars="none" />
 
 </LinearLayout>

@@ -27,6 +27,7 @@ public class FileEntityHandler {
 		this.stop = stop;
 	}
 
+	@SuppressWarnings("resource")
 	public Object handleEntity(HttpEntity entity, EntityCallback callback,
 			String target, boolean isResume) throws IOException {
 		if (TextUtils.isEmpty(target) || target.trim().length() == 0) {

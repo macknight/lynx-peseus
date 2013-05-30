@@ -57,7 +57,7 @@ public class AccountActivity extends Activity {
 			public boolean onFling(MotionEvent e1, MotionEvent e2,
 					float velocityX, float velocityY) {
 				Log.d("Tag", velocityX + "");
-				if (velocityX < 20 && curPage < VIEWS.length - 1) {
+				if (velocityY < 20 && curPage < VIEWS.length - 1) {
 					viewCur.startAnimation(upOutAnim);
 					llContainer.removeAllViews();
 					curPage++;
@@ -65,7 +65,7 @@ public class AccountActivity extends Activity {
 					llContainer.addView(viewNext);
 					viewCur = viewNext;
 					viewCur.startAnimation(downInAnim);
-				} else if (velocityX > -20 && curPage > 0) {
+				} else if (velocityY > -20 && curPage > 0) {
 					viewCur.startAnimation(downOutAnim);
 					llContainer.removeAllViews();
 					curPage--;
@@ -78,7 +78,7 @@ public class AccountActivity extends Activity {
 			}
 		});
 
-		btnBack = (Button) findViewById(R.id.btn_account_back);
+		btnBack = (Button) findViewById(R.id.btn_back);
 		btnBack.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -113,7 +113,8 @@ public class AccountActivity extends Activity {
 		downInAnim = new Rotate3D(-90, 0, mCenterX, mCenterY, Rotate3D.VERTICAL);
 		downInAnim.setFillAfter(true);
 		downInAnim.setDuration(duration);
-		downOutAnim = new Rotate3D(0, -90, mCenterX, mCenterY, Rotate3D.VERTICAL);
+		downOutAnim = new Rotate3D(0, -90, mCenterX, mCenterY,
+				Rotate3D.VERTICAL);
 		downOutAnim.setFillAfter(true);
 		downOutAnim.setDuration(duration);
 	}

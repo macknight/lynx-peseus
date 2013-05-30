@@ -21,7 +21,7 @@ public class BizActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_biz);
 
-		btnBack = (Button) findViewById(R.id.btn_biz_back);
+		btnBack = (Button) findViewById(R.id.btn_back);
 		btnBack.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -29,7 +29,7 @@ public class BizActivity extends Activity {
 			}
 		});
 	}
-	
+
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();

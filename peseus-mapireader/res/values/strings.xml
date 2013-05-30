@@ -7,8 +7,10 @@
     <!-- api reader tips -->
     <string name="api_account">账号</string>
     <string name="api_biz">业务</string>
+    <string name="api_poi">POI</string>
     <string name="api_other">其他</string>
     <string name="api_http">网络</string>
+    <string name="api_dbcache">数据库缓存</string>
 
     <!-- pull to refresh listview tips -->
     <string name="refresh_pull_down_tip">下拉刷新…</string>

@@ -23,7 +23,7 @@ import com.lynx.mapireader.api.AccountActivity;
 import com.lynx.mapireader.api.BizActivity;
 import com.lynx.mapireader.api.HttpActivity;
 import com.lynx.mapireader.api.OtherActivity;
-import com.lynx.mapireader.util.Rotate3D;
+import com.lynx.mapireader.api.POIActivity;
 import com.lynx.widget.pulltorefreshlistview.PullToRefreshListView;
 
 /**
@@ -46,14 +46,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		ptrlvMain = (PullToRefreshListView) findViewById(R.id.ptrlv_main);
 
 		Animation anim = AnimationUtils.loadAnimation(this, R.anim.item_float);
-		Rotate3D flipAnim = new Rotate3D(-90, 0,
-				LCApplication.screenWidth() / 2,
-				LCApplication.screenHeight() / 2, Rotate3D.VERTICAL);
-		lac = new LayoutAnimationController(flipAnim);
+		lac = new LayoutAnimationController(anim);
 		lac.setOrder(Animation.ZORDER_BOTTOM);
 
 		SimpleAdapter adapter = new SimpleAdapter(this, getData(),
-				R.layout.api_item, new String[] { "icon", "title", "desc",
+				R.layout.layout_main_api_item, new String[] { "icon", "title", "desc",
 						"status" }, new int[] { R.id.iv_api_item_icon,
 						R.id.tv_api_item_title, R.id.tv_api_item_desc,
 						R.id.iv_api_item_status });
@@ -66,7 +63,6 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -84,6 +80,13 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		map.put("icon", R.drawable.mapi_items_biz);
 		map.put("title", "业务");
 		map.put("desc", "app业务相关接口访问...");
+		map.put("status", R.drawable.star_orange);
+		data.add(map);
+
+		map = new HashMap<String, Object>();
+		map.put("icon", R.drawable.mapi_items_about);
+		map.put("title", "POI");
+		map.put("desc", "poi业务相关接口访问...");
 		map.put("status", R.drawable.star_orange);
 		data.add(map);
 
@@ -128,7 +131,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
 		case 2: // biz
 			intent.setClass(this, BizActivity.class);
 			break;
-		case 3: // other
+		case 3: // poi
+			intent.setClass(this, POIActivity.class);
+			break;
+		case 4: // other
 			intent.setClass(this, OtherActivity.class);
 			break;
 		default: // http
